@@ -1,0 +1,25 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g-rossler/Pokedex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g-rossler/Pokedex/issues"
+  },
+  "homepage": "https://github.com/g-rossler/Pokedex#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.7"
+  }
+}
