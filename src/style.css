@@ -1,10 +1,16 @@
+*{
+    font-family: 'Bebas Neue', cursive;
+}
+
 #cuadro-creditos{
     padding: 1rem 0;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 h1{
     text-align: center;
+    margin-top: 1rem;
 }
 
 h5{
@@ -45,25 +51,24 @@ h5{
     width: 1.3rem;
     height: 1.3rem;
     display: block;
-    margin: 0.5rem;
 }
 
 .lista-pokemon{
-    width: 10rem;
-    height: 2rem;
+    width: 100%;
+    align-items: center;
     display: flex;
-    
+    border: 1px solid;
+    margin: 0.5rem 0rem;
+    padding: 0.5rem;
 }
 
-.codigo-pokemon{
-    align-self:center;
-    margin: auto 0.5rem;
+.lista-pokemon:hover{
+    cursor: pointer;
 }
 
 .nombre-pokemon{
-    align-self:center;
     padding-left: 0.5rem;
-    margin: auto 0.5rem;
+    font-size: 1.2rem;
 }
 
 #input-buscar-pokemon{
@@ -74,25 +79,55 @@ h5{
     margin: 1rem 0.5rem;
 }
 
+#input-buscar-pokemon{
+    text-align: center;
+}
 
-.especificaciones{
-    background-color: black;
+.frase{
+    text-align: center;
+}
+
+.cuadro{
+    padding: 2rem 1rem;
+    border: 5px solid black;
+    margin: 0.2rem;
+    background-color: rgba(100, 100, 150, 0.9);
+    color: white;
+}
+
+
+
+.seleccionado{
+    background-color: rgba(1, 150, 120, 1);
+}
+
+.cuadro-detalles{
+    text-align: center;
+    padding: 1rem 0rem;
+    font-size: 1.2rem;
+    border: 1px solid white;
+    background-color: rgba(1, 150, 120, 1);
+    font-size: 1.2rem;
 }
 
 #especificaciones-imagen {
     width: 30%;
     display: block;
     margin: auto;
-    border: solid;
+    border: 0.5rem solid;
+    background-color: white;
+    border-color: black;
 }
 
 #especificaciones-nombre{
     text-align: center;
     padding: 0.5rem;
+    font-size: 2rem;
 }
 
 .especificaciones{
-    padding: 0.5rem 0 0.5rem 1rem;
+    padding: 0.5rem 0 0.5rem 3rem;
+    font-size: 1.2rem;
 }
 
 .especificaciones-valor{

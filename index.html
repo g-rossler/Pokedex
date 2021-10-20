@@ -6,14 +6,17 @@
     <title>Pokedex</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel='stylesheet' type='text/css' media='screen' href='src/style.css'>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='src/style.css'>
 </head>
 
 <body>
     <header>
         <h1>POKEDEX</h1>
-        <div class="card">
+        <div class="card frase">
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p id="frase"></p>
@@ -36,20 +39,23 @@
         </div>
 
   
-        <div class="row">
+        <div class="row cuadro">
 
             <div class="col cuadro-especificaciones">
                 <img src="" alt="" id="especificaciones-imagen">
                 <div id="especificaciones-nombre">nombre</div>
-                <div class="row especificaciones" id="especificaciones-tipo">Tipo: <span id="especificaciones-tipo-valor" class="especificaciones-valor"></span></div>
-                <div class="row">
+               
+                <div class="row cuadro-detelles">
                   <div class="col ">
+
+                    <div class="especificaciones" id="especificaciones-tipo">Tipo: <span id="especificaciones-tipo-valor" class="especificaciones-valor"></span></div>
+
                     <div id="especificaciones-altura" class="especificaciones">Altura: <span id="especificaciones-altura-valor" class="especificaciones-valor"></span></div>
                     <div id="especificaciones-vida" class="especificaciones">Vida: <span id="especificaciones-vida-valor"  class="especificaciones-valor"></span></div>
                     <div id="especificaciones-ataque" class="especificaciones">Ataque: <span id="especificaciones-ataque-valor"  class="especificaciones-valor"></span></div>
                     <div id="especificaciones-defensa" class="especificaciones">Defensa: <span id="especificaciones-defensa-valor"  class="especificaciones-valor"></span></div>
-                  </div>
-                  <div class="col">
+                  
+                    <div id="especificaciones-codigo" class="especificaciones">Codigo: <span id="especificaciones-codigo-valor" class="especificaciones-valor"></span></div>
                     <div id="especificaciones-peso" class="especificaciones">Peso: <span id="especificaciones-peso-valor"  class="especificaciones-valor"></span></div>
                     <div id="especificaciones-ataque-especial" class="especificaciones">Ataque especial: <span id="especificaciones-ataque-especial-valor"  class="especificaciones-valor"></span></div>
                     <div id="especificaciones-defensa-especial" class="especificaciones">Defensa especial: <span id="especificaciones-defensa-especial-valor"  class="especificaciones-valor"></span></div>
@@ -60,26 +66,26 @@
 
               <div class="col">
                 <ul>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
-                    <li class="lista-pokemon"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="codigo-pokemon">001</span><span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon seleccionado" id="lista-pokemon-1"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-2"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-3"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-4"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-5"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-6"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-7"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-8"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-9"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-10"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-11"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-12"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-13"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-14"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-15"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-16"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-17"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-18"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-19"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
+                    <li class="lista-pokemon" id="lista-pokemon-20"><img src="Img/Poké_Ball_icon.svg.png" alt="poke-bola" id="poke-bola-imagen"> <span class="nombre-pokemon">NOMBRE</span></li>
                 </ul>
               </div>
         </div>
@@ -104,6 +110,7 @@
 
 
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="src/funciones_botones.js"></script>
     <script src="src/frases.js"></script>
     <script src='src/main.js'></script>
 </body>
