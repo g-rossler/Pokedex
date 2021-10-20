@@ -42,10 +42,10 @@ h5{
 }
 
 #poke-bola-imagen{
-    width: 15%;
-    height: 60%;
+    width: 1.3rem;
+    height: 1.3rem;
     display: block;
-    margin: auto;
+    margin: 0.5rem;
 }
 
 .lista-pokemon{
@@ -57,11 +57,13 @@ h5{
 
 .codigo-pokemon{
     align-self:center;
+    margin: auto 0.5rem;
 }
 
 .nombre-pokemon{
     align-self:center;
     padding-left: 0.5rem;
+    margin: auto 0.5rem;
 }
 
 #input-buscar-pokemon{
@@ -75,4 +77,24 @@ h5{
 
 .especificaciones{
     background-color: black;
+}
+
+#especificaciones-imagen {
+    width: 30%;
+    display: block;
+    margin: auto;
+    border: solid;
+}
+
+#especificaciones-nombre{
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.especificaciones{
+    padding: 0.5rem 0 0.5rem 1rem;
+}
+
+.especificaciones-valor{
+    display: contents;
 }
