@@ -7,30 +7,24 @@ function asignarNombres(resultado){
     })
 }
 
-function mostrarDetallesPokemon() {
-    console.log("hola")
-    document.querySelector("#ventana-detalles-pokemon").style.display = "block"
-}
-
-function eliminarCuadros(){
-    document.querySelectorAll(".col").forEach((elemento) => {
-    elemento.remove()
+function asignarCodigo(resultado){
+    let codigo = document.querySelectorAll("#especificaciones-codigo")
+    codigo.forEach((element, index) => {
+        element.textContent = resultado.results[index]
     })
 }
 
 
-
-function asignarImagenes(resultado){
-    let imagen = document.querySelectorAll(".pokemones-imagen")
-    imagen.forEach((element, index) => {
-        let link = resultado.results[index].url;
-        fetch(link)
+function asignarImagen(resultado){
+    let imagen = document.querySelector("#especificaciones-imagen")
+        let link = resultado.results[0].url;
+        let linkMejorado = link.replace("https://pokeapi.co/api/v2", "https://pokeapi-215911.firebaseapp.com/api/v2")
+        fetch(linkMejorado)
         .then(resultado1 => resultado1.json())
         .then(resultado1JSON => {
-            element.src = resultado1JSON.sprites.front_default
+            imagen.src = resultado1JSON.sprites.front_default
         })
         .catch(error => console.error("error", error))
-    })
 }
 
 
@@ -90,15 +84,23 @@ function anteriorPagina() {
 
 }
 
+
+
+function asignarNombre(resultado) {
+    let nombre = document.querySelector("#especificaciones-nombre")
+    nombre.textContent = resultado.results[0].name.toUpperCase()
+}
+
 function datosPrimeraPagina() {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
+    fetch("https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=20&offset=0")
         .then(resultado => resultado.json())
         .then(resultadoJSON => {
 
 
-
+            asignarCodigo(resultadoJSON)
             asignarNombres(resultadoJSON);
-            asignarImagenes(resultadoJSON);
+            asignarNombre(resultadoJSON)
+            asignarImagen(resultadoJSON);
 
         })
         .catch(error => console.error("error", error));
@@ -107,7 +109,7 @@ function datosPrimeraPagina() {
 datosPrimeraPagina()
 
 
-document.querySelectorAll(".btn-info").onclick = mostrarDetallesPokemon
+
 document.querySelector("#pagina-siguiente").onclick = siguientePagina
 document.querySelector("#pagina-anterior").onclick = controlPagina
 document.querySelector("#ultima-pagina").onclick = ultimaPagina
