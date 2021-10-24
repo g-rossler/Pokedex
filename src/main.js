@@ -7,6 +7,11 @@ function asignarNombres(resultado){
     })
 }
 
+function asignarNombrePokemon(resultadoJSON){
+    let nombre = document.querySelector("#especificaciones-nombre")
+    nombre.textContent = resultadoJSON.name.toUpperCase()
+}
+
 function asignarCodigo(resultado){
     let codigo = document.querySelector("#especificaciones-codigo-valor")
     codigo.textContent = resultado.id
@@ -46,6 +51,33 @@ function asignarDatosPokemon(resultado){
     $spanTipo.textContent = texto
 }
 
+function crearListaPokemones(cantidad){
+    if(document.querySelector("ul")){
+        document.querySelector("ul").remove()
+    }
+    let $col = document.querySelector("#lista")
+    let $ul = document.createElement("ul")
+    for(let i=1; i <= cantidad; i++){
+        let $li = document.createElement("li")
+        $li.className = "lista-pokemon"
+        $li.id = `lista-pokemon-${i}`
+        $img = document.createElement("img")
+        $img.className = "poke-bola-imagen"
+        $img.src = "Img/Poké_Ball_icon.svg.png"
+        $img.alt = "poke-bola"
+        $li.appendChild($img)
+        let $span = document.createElement("span")
+        $span.className = "nombre-pokemon"
+        $li.appendChild($span)
+        $ul.appendChild($li)
+    }
+    $col.appendChild($ul)
+    document.querySelector("#lista-pokemon-1").className = "lista-pokemon seleccionado"
+
+    seleccionarPokemones(cantidad)
+}
+
+
 function asignarDatos(resultado){
     
         let link = resultado.results[0].url;
@@ -54,51 +86,48 @@ function asignarDatos(resultado){
         .then(resultado1 => resultado1.json())
         .then(resultado1JSON => {
             asignarImagen(resultado1JSON)
-            asignarDatosPokemon(resultado1JSON)
             asignarCodigo(resultado1JSON)
+            asignarDatosPokemon(resultado1JSON)
+            asignarNombrePokemon(resultado1JSON)
         })
         .catch(error => console.error("error", error))
 }
 
-function asignarNombre(resultado) {
-    let nombre = document.querySelector("#especificaciones-nombre")
-    nombre.textContent = resultado.results[0].name.toUpperCase()
-}
+
 
 function datosPrimeraPagina() {
     fetch("https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=20&offset=0")
         .then(resultado => resultado.json())
         .then(resultadoJSON => {
-
-
-            
+            let cantidadPokemones = resultadoJSON.results.length
+            crearListaPokemones(cantidadPokemones)
             asignarNombres(resultadoJSON);
-            asignarNombre(resultadoJSON)
+           
             asignarDatos(resultadoJSON);
+        })
+        .catch(error => console.error("error", error));
+}
+
+function cambiarPokemon(seleccion) {
+
+        fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/${seleccion}`)
+        .then(resultado => resultado.json())
+        .then(resultadoJSON => {
+            asignarCodigo(resultadoJSON)
+            asignarNombrePokemon(resultadoJSON)
+            asignarDatosPokemon(resultadoJSON);
+            asignarImagen(resultadoJSON)
 
         })
         .catch(error => console.error("error", error));
 }
 
-function cambiarPokemon($seleccion) {
-    $seleccion.onclick = function(e) {
-        const $elemento = e.target
-        
-    }
-}
-
-let $seleccion = document.querySelectorAll(".lista-pokemon") 
-
 
 datosPrimeraPagina()
-cambiarPokemon($seleccion) 
 
 
 
 
-document.querySelector("#pagina-siguiente").onclick = siguientePagina
-document.querySelector("#pagina-anterior").onclick = controlPagina
-document.querySelector("#ultima-pagina").onclick = ultimaPagina
 
 
 
