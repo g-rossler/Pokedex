@@ -1,8 +1,8 @@
 function anteriorPagina() {
-    if(Number(document.querySelector("#numero-pagina").innerText) === 1) {
+    if(Number(document.querySelector("#numero-pagina-comienzo").innerText) === 1) {
         return alert("Estas en la primera pagina")
     } else {
-        let pagina = (Number(document.querySelector("#numero-pagina").innerText) - 2) * 20
+        let pagina = (Number(document.querySelector("#numero-pagina-comienzo").innerText) - 1) * 20
         fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=20&offset=${pagina}`)
             .then(resultado => resultado.json())
             .then(resultadoJSON => {
@@ -10,7 +10,8 @@ function anteriorPagina() {
                 crearListaPokemones(cantidadPokemones)
                 asignarNombres(resultadoJSON);
                 asignarDatos(resultadoJSON);
-                document.querySelector("#numero-pagina").innerText = (pagina / 20) + 1
+                document.querySelector("#numero-pagina-comienzo").innerText = (pagina / 20) 
+                document.querySelector("#numero-pagina-final").innerText = (pagina / 20) 
     
             })
             .catch(error => console.error("error", error));
@@ -18,10 +19,10 @@ function anteriorPagina() {
 }
 
 function siguientePagina() {
-    if(Number(document.querySelector("#numero-pagina").innerText) === 45) {
+    if(Number(document.querySelector("#numero-pagina-comienzo").innerText) === 45) {
         return alert("Estas en la ultima pagina")
     } else {
-        let pagina = Number(document.querySelector("#numero-pagina").innerText) * 20
+        let pagina = Number(document.querySelector("#numero-pagina-comienzo").innerText) * 20
         fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=20&offset=${pagina}`)
             .then(resultado => resultado.json())
             .then(resultadoJSON => {
@@ -29,7 +30,8 @@ function siguientePagina() {
                 crearListaPokemones(cantidadPokemones)
                 asignarNombres(resultadoJSON);
                 asignarDatos(resultadoJSON);
-                document.querySelector("#numero-pagina").innerText = (pagina / 20) + 1
+                document.querySelector("#numero-pagina-comienzo").innerText = (pagina / 20) + 1
+                document.querySelector("#numero-pagina-final").innerText = (pagina / 20) + 1
     
             })
             .catch(error => console.error("error", error));
@@ -46,7 +48,8 @@ function ultimaPagina() {
             crearListaPokemones(cantidadPokemones)
             asignarNombres(resultadoJSON); 
             asignarDatos(resultadoJSON);
-            document.querySelector("#numero-pagina").innerText = 45
+            document.querySelector("#numero-pagina-comienzo").innerText = 45
+            document.querySelector("#numero-pagina-final").innerText = 45
         })
         .catch(error => console.error("error", error));
 }

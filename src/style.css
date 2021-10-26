@@ -35,7 +35,7 @@ h5{
     background-color: rgb(60, 25, 220);
 }
 
-#numero-pagina{
+#numero-pagina-comienzo{
     margin: 1rem;
     border: 1px solid;
     padding: 0.2rem 0.5rem;
@@ -44,7 +44,20 @@ h5{
     background-color: rgb(75, 36, 248);
 }
 
-#numero-pagina:hover{
+#numero-pagina-comienzo:hover{
+    background-color: rgb(60, 25, 220);
+}
+
+#numero-pagina-final{
+    margin: 1rem;
+    border: 1px solid;
+    padding: 0.2rem 0.5rem;
+    border-radius: 15%;
+    color: white;
+    background-color: rgb(75, 36, 248);
+}
+
+#numero-pagina-final:hover{
     background-color: rgb(60, 25, 220);
 }
 
