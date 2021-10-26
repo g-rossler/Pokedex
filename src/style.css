@@ -148,3 +148,7 @@ h5{
     display: contents;
     font-size: 1.5rem;
 }
+
+.pagina-anterior{
+    display: none;
+}
