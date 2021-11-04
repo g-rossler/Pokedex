@@ -44,7 +44,7 @@ export const listadoFrases = [
 export function asignarFrases(frases) {
   const textoFrase = document.querySelector('#frase');
   const autorFrase = document.querySelector('#frase-autor');
-  const numeroRandom = Math.ceil(Math.random() * 10);
+  const numeroRandom = Math.floor(Math.random() * 10);
   textoFrase.textContent = frases[numeroRandom].autor;
   autorFrase.textContent = frases[numeroRandom].frase;
 }
