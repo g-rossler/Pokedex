@@ -44,7 +44,7 @@ function cambiarPokemon(seleccion) {
     .catch((error) => console.error('error', error));
 }
 
-function seleccionarPokemones(cantidad) {
+export function seleccionarPokemones(cantidad) {
   const pokemonUno = document.querySelector('#lista-pokemon-1');
   const pokemonDos = document.querySelector('#lista-pokemon-2');
   const pokemonTres = document.querySelector('#lista-pokemon-3');
@@ -194,8 +194,6 @@ export function crearListaPokemones(cantidad) {
   }
   $cuadroLista.appendChild($lista);
   document.querySelector('#lista-pokemon-1').className = 'lista-pokemon seleccionado';
-
-  seleccionarPokemones(cantidad);
 }
 
 export function asignarNombresListado(resultado) {

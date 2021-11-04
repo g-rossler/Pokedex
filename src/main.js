@@ -1,7 +1,12 @@
 /// <reference types="jquery"/>
 
-import { listadoFrases, asignarFrases } from './frases';
-import { asignarDatosPokemon, crearListaPokemones, asignarNombresListado } from './ui';
+// eslint-disable-next-line import/extensions
+import { listadoFrases, asignarFrases } from './frases.js';
+
+import {
+  asignarDatosPokemon, crearListaPokemones, asignarNombresListado, seleccionarPokemones,
+  // eslint-disable-next-line import/extensions
+} from './ui.js';
 
 function asignarDatosPokemonSeleccionado(resultado) {
   const link = resultado.results[0].url;
@@ -14,17 +19,15 @@ function asignarDatosPokemonSeleccionado(resultado) {
     .catch((error) => console.error('error', error));
 }
 
-function inicio(pagina = 0) {
+async function inicio(pagina = 0) {
   asignarFrases(listadoFrases);
-  fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=20&offset=${pagina}`)
-    .then((resultado) => resultado.json())
-    .then((resultadoJSON) => {
-      const cantidadPokemones = resultadoJSON.results.length;
-      crearListaPokemones(cantidadPokemones);
-      asignarNombresListado(resultadoJSON);
-      asignarDatosPokemonSeleccionado(resultadoJSON);
-    })
-    .catch((error) => console.error('error', error));
+  const link = await fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=20&offset=${pagina}`);
+  const respuesta = await link.json();
+  const cantidadPokemones = respuesta.results.length;
+  crearListaPokemones(cantidadPokemones);
+  seleccionarPokemones(cantidadPokemones);
+  asignarNombresListado(respuesta);
+  asignarDatosPokemonSeleccionado(respuesta);
 }
 
 function anteriorPagina() {
@@ -40,20 +43,18 @@ function anteriorPagina() {
   inicio(pagina);
 }
 
-function ultimaPagina() {
+async function ultimaPagina() {
   document.querySelector('.pagina-anterior').style.display = 'inline-block';
   document.querySelector('.pagina-siguiente').style.display = 'none';
-  fetch('https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=18&offset=880')
-    .then((resultado) => resultado.json())
-    .then((resultadoJSON) => {
-      const cantidadPokemones = resultadoJSON.results.length;
-      crearListaPokemones(cantidadPokemones);
-      asignarListadoNombres(resultadoJSON);
-      asignarDatosPokemonSeleccionado(resultadoJSON);
-      document.querySelector('#numero-pagina-comienzo').innerText = 44;
-      document.querySelector('#numero-pagina-final').innerText = 44;
-    })
-    .catch((error) => console.error('error', error));
+  const link = await fetch('https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=18&offset=880');
+  const respuesta = await link.json();
+  const cantidadPokemones = respuesta.results.length;
+  crearListaPokemones(cantidadPokemones);
+  seleccionarPokemones(cantidadPokemones);
+  asignarNombresListado(respuesta);
+  asignarDatosPokemonSeleccionado(respuesta);
+  document.querySelector('#numero-pagina-comienzo').innerText = 44;
+  document.querySelector('#numero-pagina-final').innerText = 44;
 }
 
 function siguientePagina() {
