@@ -1,6 +1,6 @@
 export function asignarDatosPokemon(resultado) {
-  const nombre = document.querySelector('#especificaciones-nombre');
-  nombre.textContent = resultado.name.toUpperCase();
+  const $nombre = document.querySelector('#especificaciones-nombre');
+  $nombre.textContent = resultado.name.toUpperCase();
 
   const codigo = document.querySelector('#especificaciones-codigo-valor');
   codigo.textContent = resultado.id;

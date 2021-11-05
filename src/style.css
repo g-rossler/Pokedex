@@ -149,6 +149,10 @@ h5{
     font-size: 1.5rem;
 }
 
-.pagina-anterior{
+.visible {
+    display: inline-block;
+}
+
+.oculto {
     display: none;
 }
