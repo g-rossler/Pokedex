@@ -203,3 +203,24 @@ export function asignarNombresListado(resultado) {
     elemento.textContent = resultado.results[index].name.toUpperCase();
   });
 }
+
+export function visibilizarBoton(boton) {
+  const $boton = document.querySelector(`.${boton}-pagina`);
+  $boton.className = `boton-pagina btn btn-dark ${boton}-pagina visible`;
+}
+
+export function ocultarBoton(boton) {
+  const $boton = document.querySelector(`.${boton}-pagina`);
+  $boton.className = `boton-pagina btn btn-dark ${boton}-pagina oculto`;
+}
+
+export function cambiarNumeroPagina(accion) {
+  const $numeroPagina = document.querySelector('#numero-pagina');
+  if (accion === 'mas') {
+    $numeroPagina.innerText = Number($numeroPagina.innerText) + 1;
+  } else if (accion === 'menos') {
+    $numeroPagina.innerText = Number($numeroPagina.innerText) - 1;
+  } else {
+    $numeroPagina.innerText = 44;
+  }
+}

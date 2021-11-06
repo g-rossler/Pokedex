@@ -1,36 +1,41 @@
 import inicio from './main';
+import { cambiarNumeroPagina, ocultarBoton, visibilizarBoton } from './ui';
 
 function anteriorPagina() {
-  const $numeroPagina = document.querySelector('#numero-pagina-comienzo');
-  const $botonPaginaAnterior = document.querySelector('.pagina-anterior');
-  const $botonPaginaSiguiente = document.querySelector('.pagina-siguiente');
+  const $numeroPagina = document.querySelector('#numero-pagina');
   if (Number(($numeroPagina).innerText) === 2) {
-    $botonPaginaAnterior.className = 'boton-pagina btn btn-dark pagina-anterior oculto';
+    const anterior = 'anterior';
+    ocultarBoton(anterior);
   } else if (Number(($numeroPagina).innerText) === 44) {
-    $botonPaginaSiguiente.className = 'boton-pagina btn btn-dark pagina-siguiente visible';
+    const siguiente = 'siguiente';
+    visibilizarBoton(siguiente);
   }
-  $numeroPagina.innerText = Number($numeroPagina.innerText) - 1;
+  const menos = 'menos';
+  cambiarNumeroPagina(menos);
   inicio((Number($numeroPagina.innerText) - 1) * 20);
 }
 
 function siguientePagina(pagina) {
-  const $numeroPagina = document.querySelector('#numero-pagina-comienzo');
-  const $botonPaginaAnterior = document.querySelector('.pagina-anterior');
-  const $botonPaginaSiguiente = document.querySelector('.pagina-siguiente');
+  const $numeroPagina = document.querySelector('#numero-pagina');
+  const anterior = 'anterior';
   if (Number($numeroPagina.innerText) === 43 || pagina === 44) {
-    $botonPaginaAnterior.className = 'boton-pagina btn btn-dark pagina-anterior visible';
-    $botonPaginaSiguiente.className = 'boton-pagina btn btn-dark pagina-siguiente oculto';
-    $numeroPagina.innerText = 44;
+    const siguiente = 'siguiente';
+    const ultima = 'ultima';
+    visibilizarBoton(anterior);
+    ocultarBoton(siguiente);
+    ocultarBoton(ultima);
+    cambiarNumeroPagina(ultima);
     inicio(880, 18);
   } else {
-    $botonPaginaAnterior.className = 'boton-pagina btn btn-dark pagina-anterior visible';
-    $numeroPagina.innerText = Number($numeroPagina.innerText) + 1;
+    visibilizarBoton(anterior);
+    const mas = 'mas';
+    cambiarNumeroPagina(mas);
     inicio((Number($numeroPagina.innerText) - 1) * 20);
   }
 }
 
-const $botonAnteriorPagina = document.querySelector('.pagina-anterior');
-const $botonSiguientePagina = document.querySelector('.pagina-siguiente');
+const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
+const $botonSiguientePagina = document.querySelector('.siguiente-pagina');
 const $botonUltimaPagina = document.querySelector('.ultima-pagina');
 
 $botonAnteriorPagina.onclick = anteriorPagina;
