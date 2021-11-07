@@ -1,33 +1,66 @@
-/// <reference types="jquery"/>
-
 // eslint-disable-next-line import/extensions
-import { listadoFrases, asignarFrases } from './frases.js';
+import inicio from './fetch.js';
+// eslint-disable-next-line import/extensions
+import { cambiarNumeroPagina, ocultarBoton, visibilizarBoton } from './ui.js';
 
-import {
-  asignarDatosPokemon, crearListaPokemones, asignarNombresListado, seleccionarPokemones,
-  // eslint-disable-next-line import/extensions
-} from './ui.js';
-
-function asignarDatosPokemonSeleccionado(resultado) {
-  const link = resultado.results[0].url;
-  const linkMejorado = link.replace('https://pokeapi.co/api/v2', 'https://pokeapi-215911.firebaseapp.com/api/v2');
-  fetch(linkMejorado)
-    .then((resultadoLink) => resultadoLink.json())
-    .then((resultadoJSON) => {
-      asignarDatosPokemon(resultadoJSON);
-    })
-    .catch((error) => console.error('error', error));
+function anteriorPagina(numeroPagina) {
+  if (numeroPagina === 2) {
+    const anterior = 'anterior';
+    ocultarBoton(anterior);
+  } else if (numeroPagina === 44) {
+    const siguiente = 'siguiente';
+    visibilizarBoton(siguiente);
+  }
+  const menos = 'menos';
+  cambiarNumeroPagina(menos);
 }
 
-export default async function inicio(pagina = 0, limite = 20) {
-  asignarFrases(listadoFrases);
-  const link = await fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=${limite}&offset=${pagina}`);
-  const respuesta = await link.json();
-  const cantidadPokemones = respuesta.results.length;
-  crearListaPokemones(cantidadPokemones);
-  seleccionarPokemones(cantidadPokemones);
-  asignarNombresListado(respuesta);
-  asignarDatosPokemonSeleccionado(respuesta);
+function siguientePagina() {
+  const anterior = 'anterior';
+  visibilizarBoton(anterior);
+  const mas = 'mas';
+  cambiarNumeroPagina(mas);
 }
+
+function ultimaPagina() {
+  const anterior = 'anterior';
+  const siguiente = 'siguiente';
+  const ultima = 'ultima';
+  visibilizarBoton(anterior);
+  ocultarBoton(siguiente);
+  ocultarBoton(ultima);
+  cambiarNumeroPagina(ultima);
+}
+
+function averiguarPagina() {
+  const $numeroPagina = document.querySelector('#numero-pagina');
+  return Number($numeroPagina.innerText);
+}
+
+const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
+const $botonSiguientePagina = document.querySelector('.siguiente-pagina');
+const $botonUltimaPagina = document.querySelector('.ultima-pagina');
+
+$botonAnteriorPagina.addEventListener('click', () => {
+  const numeroPagina = averiguarPagina();
+  anteriorPagina(numeroPagina);
+  inicio((numeroPagina) * 20);
+});
+
+$botonSiguientePagina.addEventListener('click', () => {
+  const numeroPagina = averiguarPagina();
+  if (numeroPagina === 43) {
+    ultimaPagina();
+    inicio(880, 18);
+  } else {
+    siguientePagina();
+    inicio((numeroPagina) * 20);
+  }
+});
+
+$botonUltimaPagina.addEventListener('click', () => {
+  ultimaPagina();
+  inicio(880, 18);
+});
 
 inicio();
