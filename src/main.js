@@ -12,9 +12,9 @@ function asignarDatosPokemonSeleccionado(resultado) {
   const link = resultado.results[0].url;
   const linkMejorado = link.replace('https://pokeapi.co/api/v2', 'https://pokeapi-215911.firebaseapp.com/api/v2');
   fetch(linkMejorado)
-    .then((resultado1) => resultado1.json())
-    .then((resultado1JSON) => {
-      asignarDatosPokemon(resultado1JSON);
+    .then((resultadoLink) => resultadoLink.json())
+    .then((resultadoJSON) => {
+      asignarDatosPokemon(resultadoJSON);
     })
     .catch((error) => console.error('error', error));
 }
