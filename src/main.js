@@ -44,7 +44,7 @@ const $botonUltimaPagina = document.querySelector('.ultima-pagina');
 $botonAnteriorPagina.addEventListener('click', () => {
   const numeroPagina = averiguarPagina();
   anteriorPagina(numeroPagina);
-  inicio((numeroPagina) * 20);
+  inicio(((numeroPagina) - 2) * 20);
 });
 
 $botonSiguientePagina.addEventListener('click', () => {
