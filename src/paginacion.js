@@ -1,45 +1,64 @@
-import inicio from './main';
-import { cambiarNumeroPagina, ocultarBoton, visibilizarBoton } from './ui';
+// eslint-disable-next-line import/extensions
+import inicio from './main.js';
+// eslint-disable-next-line import/extensions
+import { cambiarNumeroPagina, ocultarBoton, visibilizarBoton } from './ui.js';
 
-function anteriorPagina() {
-  const $numeroPagina = document.querySelector('#numero-pagina');
-  if (Number(($numeroPagina).innerText) === 2) {
+function anteriorPagina(numeroPagina) {
+  if (numeroPagina === 2) {
     const anterior = 'anterior';
     ocultarBoton(anterior);
-  } else if (Number(($numeroPagina).innerText) === 44) {
+  } else if (numeroPagina === 44) {
     const siguiente = 'siguiente';
     visibilizarBoton(siguiente);
   }
   const menos = 'menos';
   cambiarNumeroPagina(menos);
-  inicio((Number($numeroPagina.innerText) - 1) * 20);
 }
 
-function siguientePagina(pagina) {
-  const $numeroPagina = document.querySelector('#numero-pagina');
+function siguientePagina() {
   const anterior = 'anterior';
-  if (Number($numeroPagina.innerText) === 43 || pagina === 44) {
-    const siguiente = 'siguiente';
-    const ultima = 'ultima';
-    visibilizarBoton(anterior);
-    ocultarBoton(siguiente);
-    ocultarBoton(ultima);
-    cambiarNumeroPagina(ultima);
-    inicio(880, 18);
-  } else {
-    visibilizarBoton(anterior);
-    const mas = 'mas';
-    cambiarNumeroPagina(mas);
-    inicio((Number($numeroPagina.innerText) - 1) * 20);
-  }
+  visibilizarBoton(anterior);
+  const mas = 'mas';
+  cambiarNumeroPagina(mas);
+}
+
+function ultimaPagina() {
+  const anterior = 'anterior';
+  const siguiente = 'siguiente';
+  const ultima = 'ultima';
+  visibilizarBoton(anterior);
+  ocultarBoton(siguiente);
+  ocultarBoton(ultima);
+  cambiarNumeroPagina(ultima);
+}
+
+function averiguarPagina() {
+  const $numeroPagina = document.querySelector('#numero-pagina');
+  return Number($numeroPagina.innerText);
 }
 
 const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
 const $botonSiguientePagina = document.querySelector('.siguiente-pagina');
 const $botonUltimaPagina = document.querySelector('.ultima-pagina');
 
-$botonAnteriorPagina.onclick = anteriorPagina;
-$botonSiguientePagina.onclick = siguientePagina;
+$botonAnteriorPagina.addEventListener('click', () => {
+  const numeroPagina = averiguarPagina();
+  anteriorPagina(numeroPagina);
+  inicio((numeroPagina - 1) * 20);
+});
+
+$botonSiguientePagina.addEventListener('click', () => {
+  const numeroPagina = averiguarPagina();
+  if (numeroPagina === 43) {
+    ultimaPagina();
+    inicio(880, 18);
+  } else {
+    siguientePagina(numeroPagina);
+    inicio((numeroPagina + 1) * 20);
+  }
+});
+
 $botonUltimaPagina.addEventListener('click', () => {
-  siguientePagina(44);
+  ultimaPagina();
+  inicio(880, 18);
 });
