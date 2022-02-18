@@ -35,7 +35,7 @@ h5{
     background-color: rgb(60, 25, 220);
 }
 
-#numero-pagina-comienzo{
+#numero-pagina{
     margin: 1rem;
     border: 1px solid;
     padding: 0.2rem 0.5rem;
@@ -44,20 +44,7 @@ h5{
     background-color: rgb(75, 36, 248);
 }
 
-#numero-pagina-comienzo:hover{
-    background-color: rgb(60, 25, 220);
-}
-
-#numero-pagina-final{
-    margin: 1rem;
-    border: 1px solid;
-    padding: 0.2rem 0.5rem;
-    border-radius: 15%;
-    color: white;
-    background-color: rgb(75, 36, 248);
-}
-
-#numero-pagina-final:hover{
+#numero-pagina:hover{
     background-color: rgb(60, 25, 220);
 }
 
@@ -149,6 +136,10 @@ h5{
     font-size: 1.5rem;
 }
 
-.pagina-anterior{
+.visible {
+    display: inline-block;
+}
+
+.oculto {
     display: none;
 }

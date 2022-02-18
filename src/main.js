@@ -1,133 +1,66 @@
-/// <reference types="jquery"/>
+// eslint-disable-next-line import/extensions
+import inicio from './fetch.js';
+// eslint-disable-next-line import/extensions
+import { cambiarNumeroPagina, ocultarBoton, visibilizarBoton } from './ui.js';
 
-function asignarNombres(resultado){
-    let nombre = document.querySelectorAll(".nombre-pokemon")
-    nombre.forEach((element, index) => {
-        element.textContent = resultado.results[index].name.toUpperCase()
-    })
+function anteriorPagina(numeroPagina) {
+  if (numeroPagina === 2) {
+    const anterior = 'anterior';
+    ocultarBoton(anterior);
+  } else if (numeroPagina === 44) {
+    const siguiente = 'siguiente';
+    visibilizarBoton(siguiente);
+  }
+  const menos = 'menos';
+  cambiarNumeroPagina(menos);
 }
 
-function asignarNombrePokemon(resultadoJSON){
-    let nombre = document.querySelector("#especificaciones-nombre")
-    nombre.textContent = resultadoJSON.name.toUpperCase()
+function siguientePagina() {
+  const anterior = 'anterior';
+  visibilizarBoton(anterior);
+  const mas = 'mas';
+  cambiarNumeroPagina(mas);
 }
 
-function asignarCodigo(resultado){
-    let codigo = document.querySelector("#especificaciones-codigo-valor")
-    codigo.textContent = resultado.id
+function ultimaPagina() {
+  const anterior = 'anterior';
+  const siguiente = 'siguiente';
+  const ultima = 'ultima';
+  visibilizarBoton(anterior);
+  ocultarBoton(siguiente);
+  ocultarBoton(ultima);
+  cambiarNumeroPagina(ultima);
 }
 
-function asignarImagen(resultado) {
-    let $imagen = document.querySelector("#especificaciones-imagen")
-    $imagen.src = resultado.sprites.front_default
+function averiguarPagina() {
+  const $numeroPagina = document.querySelector('#numero-pagina');
+  return Number($numeroPagina.innerText);
 }
 
-function asignarDatosPokemon(resultado){
-    let $spanTipo = document.querySelector("#especificaciones-tipo-valor")
-    let $spanAltura = document.querySelector("#especificaciones-altura-valor")
-    let $spanVida = document.querySelector("#especificaciones-vida-valor")
-    let $spanAtaque = document.querySelector("#especificaciones-ataque-valor")
-    let $spanDefensa = document.querySelector("#especificaciones-defensa-valor")
-    let $spanPeso = document.querySelector("#especificaciones-peso-valor")
-    let $spanAtaqueEspecial = document.querySelector("#especificaciones-ataque-especial-valor")
-    let $spanDefensaEspecial = document.querySelector("#especificaciones-defensa-especial-valor")
-    let $spanVelocidad = document.querySelector("#especificaciones-velocidad-valor")
+const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
+const $botonSiguientePagina = document.querySelector('.siguiente-pagina');
+const $botonUltimaPagina = document.querySelector('.ultima-pagina');
 
-    $spanAltura.textContent = resultado.height
-    $spanVida.textContent = resultado.stats[0].base_stat
-    $spanAtaque.textContent = resultado.stats[1].base_stat
-    $spanDefensa.textContent = resultado.stats[2].base_stat
-    $spanPeso.textContent = resultado.weight
-    $spanAtaqueEspecial.textContent = resultado.stats[3].base_stat
-    $spanDefensaEspecial.textContent = resultado.stats[4].base_stat
-    $spanVelocidad.textContent = resultado.stats[5].base_stat
+$botonAnteriorPagina.addEventListener('click', () => {
+  const numeroPagina = averiguarPagina();
+  anteriorPagina(numeroPagina);
+  inicio(((numeroPagina) - 2) * 20);
+});
 
-    let texto = ""
+$botonSiguientePagina.addEventListener('click', () => {
+  const numeroPagina = averiguarPagina();
+  if (numeroPagina === 43) {
+    ultimaPagina();
+    inicio(880, 18);
+  } else {
+    siguientePagina();
+    inicio((numeroPagina) * 20);
+  }
+});
 
-   resultado.types.forEach(elemento => {
-        texto = texto + " " + elemento.type.name[0].toUpperCase() + elemento.type.name.slice(1)
-    } )
-    
-    $spanTipo.textContent = texto
-}
+$botonUltimaPagina.addEventListener('click', () => {
+  ultimaPagina();
+  inicio(880, 18);
+});
 
-function crearListaPokemones(cantidad){
-    if(document.querySelector("ul")){
-        document.querySelector("ul").remove()
-    }
-    let $col = document.querySelector("#lista")
-    let $ul = document.createElement("ul")
-    for(let i=1; i <= cantidad; i++){
-        let $li = document.createElement("li")
-        $li.className = "lista-pokemon"
-        $li.id = `lista-pokemon-${i}`
-        $img = document.createElement("img")
-        $img.className = "poke-bola-imagen"
-        $img.src = "Img/Poké_Ball_icon.svg.png"
-        $img.alt = "poke-bola"
-        $li.appendChild($img)
-        let $span = document.createElement("span")
-        $span.className = "nombre-pokemon"
-        $li.appendChild($span)
-        $ul.appendChild($li)
-    }
-    $col.appendChild($ul)
-    document.querySelector("#lista-pokemon-1").className = "lista-pokemon seleccionado"
-
-    seleccionarPokemones(cantidad)
-}
-
-
-function asignarDatos(resultado){
-    
-        let link = resultado.results[0].url;
-        let linkMejorado = link.replace("https://pokeapi.co/api/v2", "https://pokeapi-215911.firebaseapp.com/api/v2")
-        fetch(linkMejorado)
-        .then(resultado1 => resultado1.json())
-        .then(resultado1JSON => {
-            asignarImagen(resultado1JSON)
-            asignarCodigo(resultado1JSON)
-            asignarDatosPokemon(resultado1JSON)
-            asignarNombrePokemon(resultado1JSON)
-        })
-        .catch(error => console.error("error", error))
-}
-
-
-
-function datosPrimeraPagina() {
-    fetch("https://pokeapi-215911.firebaseapp.com/api/v2/pokemon?limit=20&offset=0")
-        .then(resultado => resultado.json())
-        .then(resultadoJSON => {
-            let cantidadPokemones = resultadoJSON.results.length
-            crearListaPokemones(cantidadPokemones)
-            asignarNombres(resultadoJSON);
-           
-            asignarDatos(resultadoJSON);
-        })
-        .catch(error => console.error("error", error));
-}
-
-function cambiarPokemon(seleccion) {
-
-        fetch(`https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/${seleccion}`)
-        .then(resultado => resultado.json())
-        .then(resultadoJSON => {
-            asignarCodigo(resultadoJSON)
-            asignarNombrePokemon(resultadoJSON)
-            asignarDatosPokemon(resultadoJSON);
-            asignarImagen(resultadoJSON)
-
-        })
-        .catch(error => console.error("error", error));
-}
-
-
-datosPrimeraPagina()
-
-
-
-
-
-
-
+inicio();
