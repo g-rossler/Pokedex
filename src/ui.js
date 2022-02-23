@@ -178,6 +178,7 @@ export function crearListaPokemones(cantidad) {
   }
   const $cuadroLista = document.querySelector('#lista');
   const $lista = document.createElement('ul');
+  $lista.className = 'lista-contenedor';
   for (let i = 1; i <= cantidad; i += 1) {
     const $cuadroPokemon = document.createElement('li');
     $cuadroPokemon.className = 'lista-pokemon';

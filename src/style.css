@@ -1,22 +1,39 @@
 *{
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+body, html{
+    margin:0;
+    padding:0;
+    background-color: #212529;
+}
+
+h1{
+    text-align: center;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
+    color: crimson;
+}
+
+h5{
+    min-width: 9rem;
+}
+
+header{
+    margin-top: 1rem;
+}
+
+footer{
+    margin: 0;
 }
 
 #cuadro-creditos{
     padding: 1rem 0;
     text-align: center;
     font-size: 1.2rem;
+    margin: 0px;
 }
 
-h1{
-    text-align: center;
-    margin-top: 1rem;
-}
-
-h5{
-    min-width: 9rem;
-}
 
 #herramientas{
     display: flex;
@@ -27,25 +44,30 @@ h5{
 .boton-pagina{
     padding: 0.2rem 0.5rem;
     margin: 1rem;
+    letter-spacing: 3px;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
     color: white;
-    background-color: rgb(75, 36, 248);
+    background-color: #212529;
+    border: 3px solid crimson;
+    font-size: 1.2rem;
 }
 
 .boton-pagina:hover{
-    background-color: rgb(60, 25, 220);
+    color: #fff;
+    background-color: #2f3335;
+    border-color: #e92e57;
+    box-shadow: none;
+}
+
+.boton-pagina:focus{
+    color: #fff;
+    background-color: #2f3335;
+    border-color: #e92e57;
+    box-shadow: none;
 }
 
 #numero-pagina{
-    margin: 1rem;
-    border: 1px solid;
-    padding: 0.2rem 0.5rem;
-    border-radius: 15%;
-    color: white;
-    background-color: rgb(75, 36, 248);
-}
-
-#numero-pagina:hover{
-    background-color: rgb(60, 25, 220);
+    width: 3%;
 }
 
 .poke-bola-imagen{
@@ -55,21 +77,29 @@ h5{
 }
 
 .lista-pokemon{
-    width: 100%;
+    width: 90%;
     align-items: center;
     display: flex;
-    border: 1px solid;
+    border: 3px solid;
     margin: 0.5rem 0rem;
     padding: 0.5rem;
+    border-radius: 15px;
+    border-color: white;
 }
+
+
 
 .lista-pokemon:hover{
     cursor: pointer;
+    background-color: #848386;
 }
 
 .nombre-pokemon{
+    color: crimson;
     padding-left: 0.5rem;
     font-size: 1.5rem;
+    letter-spacing: 3.5px;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
 }
 
 #input-buscar-pokemon{
@@ -86,20 +116,39 @@ h5{
 
 .frase{
     text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+#frase{
+    font-size: 1.5rem;
+}
+
+#frase-autor{
+    letter-spacing: 2px;
 }
 
 .cuadro{
     padding: 2rem 1rem;
-    border: 5px solid black;
+    border: 5px solid white;
     margin: 0.2rem;
-    background-color: rgba(100, 100, 150, 0.9);
+    background-color: #2f3335;
     color: white;
+    border-radius: 15px;
 }
 
+.lista{
+    display: grid;
+}
 
+.lista-contenedor{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 .seleccionado{
-    background-color: rgba(1, 150, 120, 1);
+    background-color: #606160;
 }
 
 .cuadro-detalles{
@@ -117,18 +166,24 @@ h5{
     margin: auto;
     border: 0.5rem solid;
     background-color: white;
-    border-color: black;
+    border-color: crimson;
+    border-radius: 15px;
 }
 
 #especificaciones-nombre{
     text-align: center;
     padding: 0.5rem;
     font-size: 2rem;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
+    letter-spacing: 3px;
 }
 
 .especificaciones{
-    padding: 0.5rem 0 0.5rem 3rem;
+    padding: 0.5rem;
     font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
+    color: white;
 }
 
 .especificaciones-valor{
@@ -142,4 +197,75 @@ h5{
 
 .oculto {
     display: none;
+}
+
+#columna-especificaciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#cuadro-creditos-texto{
+    color: white;
+    font-size: 1.5rem;
+}
+
+#cuadro-creditos-link{
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    #numero-pagina{
+        width: 5%;
+    }
+
+    .boton-pagina{
+        font-size: 1rem;
+    }
+
+    .cuadro{
+        flex-direction: column;
+    }
+
+    #cuadro-especificaciones{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    #numero-pagina{
+        width: 15%;
+    }
+
+    #columna-especificaciones{
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .especificaciones{
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .especificaciones-valor{
+        font-size: 1rem;
+    }
+
+    .nombre-pokemon{
+        font-size: 1rem;
+    }
+
+    .lista-contenedor{
+        padding: 0;
+    }
+
+    .cuadro-especificaciones{
+        margin-bottom: 20px;
+    }
+
+    #especificaciones-nombre{
+        font-size: 1.5rem;
+    }
+
+    #especificaciones-imgen{
+        width: 40%;
+    }
 }
