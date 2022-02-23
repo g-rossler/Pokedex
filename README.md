@@ -3,7 +3,7 @@
 Mira la enciclopedia que contiene a todos los pokemones y sus datos.
 
 
-Demo: <a href="https://g-rossler.github.io/Pokedex/">Echange Rate Market</a>
+Demo: <a href="https://g-rossler.github.io/Pokedex/">Pokedex</a>
 
 ### Tecnologías Usadas
 
