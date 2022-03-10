@@ -45,11 +45,11 @@ http-server
 
 La Pokedex es simple de usar. Una vez que cargo completamente la página principal, el usuario podra ver a la derecha una lista con 20 pokemones por pagina y a la izquierda los datos del pokemon elegido y su imagen. 
  
-<img  src="https://raw.githubusercontent.com/g-rossler/Pokedex/Readme/Img/Readme/Pagina-Principal.png" align="center" alt="Pagina de inicio de la Pokedex">
+<img  src="https://raw.githubusercontent.com/g-rossler/Pokedex/gh-pages/Img/Readme/Pagina-Principal.png" align="center" alt="Pagina de inicio de la Pokedex">
 <sup>Pagina de inicio de la Pokedex</sup>
 <br/><br/>
 
-Ademas, tambien se encontrara abajo del titulo de la pagina, frases utilizadas en el programa.
+Ademas, tambien se encuentra, abajo del titulo de la pagina, frases utilizadas en el programa.
 
 
 
@@ -75,7 +75,7 @@ Si encontrás un error, me podes contactar por:
 
 ## Contribuciones
 
-Son aceptados cambios o mejoras.
+Son aceptados cambios o mejoras, para ello, abre un nuevo Inssue o enviame un mensaje a mi email.
 
 #
 
