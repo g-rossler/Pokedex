@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/extensions
-import inicio from './fetch.js';
-// eslint-disable-next-line import/extensions
+import inicio from './main.js';
 import { verificarVisibilidadBotonesPaginador, modificarNumeroPagina } from './ui.js';
 
 const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
@@ -32,14 +30,16 @@ function manejarCambioPagina(texto) {
   verificarVisibilidadBotonesPaginador(numeroPagina);
 }
 
-$botonSiguientePagina.addEventListener('click', (e) => {
-  manejarCambioPagina(e.target.innerText);
-});
+export default function activarPaginador() {
+  $botonSiguientePagina.addEventListener('click', (e) => {
+    manejarCambioPagina(e.target.innerText);
+  });
 
-$botonAnteriorPagina.addEventListener('click', (e) => {
-  manejarCambioPagina(e.target.innerText);
-});
+  $botonAnteriorPagina.addEventListener('click', (e) => {
+    manejarCambioPagina(e.target.innerText);
+  });
 
-$botonUltimaPagina.addEventListener('click', (e) => {
-  manejarCambioPagina(e.target.innerText);
-});
+  $botonUltimaPagina.addEventListener('click', (e) => {
+    manejarCambioPagina(e.target.innerText);
+  });
+}

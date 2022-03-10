@@ -1,9 +1,7 @@
 import {
   cargarPokemonesLocalStorage, guardarPokemonesLocalStorage, cargarPokemonLocalStorage,
   guardarPokemonLocalStorage,
-  // eslint-disable-next-line import/extensions
 } from './storage.js';
-// eslint-disable-next-line import/extensions
 import { cargarPokemonesAPI, cargarPokemonAPI } from './api.js';
 
 export async function cargarPokemon() {

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/extensions
 import { cambiarPokemon } from './servicios.js';
 
 const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
