@@ -1,3 +1,3 @@
-import inicio from './main.js';
+import { inicioPokedex } from "./main.js";
 
-inicio();
+inicioPokedex();
