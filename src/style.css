@@ -67,7 +67,7 @@ footer{
 }
 
 #numero-pagina{
-    width: 3%;
+    width: fit-content;
 }
 
 .poke-bola-imagen{
