@@ -5,12 +5,17 @@ import {
 import { cargarPokemones, cargarPokemon } from './servicios.js';
 import activarPaginador from "./eventos.js"
 
-export default async function inicio(pagina = 0, limite = 20) {
+export async function crearPaginaPokedex(pagina = 0, limite = 20){
   asignarFrases();
-  const resultado = await cargarPokemones(limite, pagina);
-  const cantidadPokemones = resultado.results.length;
-  crearListaPokemones(cantidadPokemones, resultado);
+  const listaPokemones = await cargarPokemones(limite, pagina);
+  const cantidadPokemones = listaPokemones.results.length;
+  crearListaPokemones(cantidadPokemones, listaPokemones);
   const datosPokemon = await cargarPokemon();
   asignarDatosPokemon(datosPokemon);
+}
+
+
+export async function inicioPokedex() {
+  await crearPaginaPokedex()
   activarPaginador()
 }

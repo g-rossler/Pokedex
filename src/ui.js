@@ -21,8 +21,8 @@ class Pokemon {
   }
 }
 
-export function asignarDatosPokemon(datos) {
-  const pokemon = new Pokemon(datos);
+export function asignarDatosPokemon(datosPokemon) {
+  const pokemon = new Pokemon(datosPokemon);
 
   const $nombrePokemon = document.querySelector('#especificaciones-nombre');
   const $codigoPokemon = document.querySelector('#especificaciones-codigo-valor');
@@ -49,22 +49,21 @@ export function asignarDatosPokemon(datos) {
   $DefensaEspecialPokemon.textContent = pokemon.defensaEspecial;
   $VelocidadPokemon.textContent = pokemon.velocidad;
 
-  let texto = '';
+  let textoTipos = '';
   pokemon.tipo.forEach((elemento) => {
-    texto = `${texto} ${elemento.type.name[0].toUpperCase()}${elemento.type.name.slice(1)}`;
+    textoTipos = `${textoTipos} ${elemento.type.name[0].toUpperCase()}${elemento.type.name.slice(1)}`;
   });
-  $TipoPokemon.textContent = texto;
+  $TipoPokemon.textContent = textoTipos;
 
   if (pokemon.imagen === null) {
     $imagenPokemon.src = 'Img/Error_img.jpg';
   }
 }
 
-function asignarNombresListado(resultado) {
-  const nombre = document.querySelectorAll('.nombre-pokemon');
-  nombre.forEach((element, index) => {
-    const elemento = element;
-    elemento.textContent = resultado.results[index].name.toUpperCase();
+function asignarNombresListado(listaPokemones) {
+  const containerNombresPokemon = document.querySelectorAll('.nombre-pokemon');
+  containerNombresPokemon.forEach((elemento, index) => {
+    elemento.textContent = listaPokemones.results[index].name.toUpperCase();
   });
 }
 
@@ -99,9 +98,9 @@ function crearLista(cantidad) {
   document.querySelector('#lista-pokemon-1').className = 'lista-pokemon seleccionado';
 }
 
-export function crearListaPokemones(cantidad, resultado) {
-  crearLista(cantidad);
-  asignarNombresListado(resultado);
+export function crearListaPokemones(cantidadPokemones, listaPokemones) {
+  crearLista(cantidadPokemones);
+  asignarNombresListado(listaPokemones);
 }
 
 export function verificarVisibilidadBotonesPaginador(numeroPagina) {

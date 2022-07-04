@@ -5,24 +5,24 @@ import {
 import { cargarPokemonesAPI, cargarPokemonAPI } from './api.js';
 
 export async function cargarPokemon() {
-  const nombre = document.querySelectorAll('.lista-pokemon')[0].innerText.toLowerCase();
-  let datos;
+  const containerPrimerPokemon = document.querySelectorAll('.lista-pokemon')[0].innerText.toLowerCase();
+  let datosPokemon;
   try {
-    datos = cargarPokemonLocalStorage(nombre);
+    datosPokemon = cargarPokemonLocalStorage(containerPrimerPokemon);
   } catch (e) {
-    datos = await cargarPokemonAPI(nombre);
-    guardarPokemonLocalStorage(nombre, datos);
+    datosPokemon = await cargarPokemonAPI(containerPrimerPokemon);
+    guardarPokemonLocalStorage(containerPrimerPokemon, datosPokemon);
   }
-  return datos;
+  return datosPokemon;
 }
 
 export async function cargarPokemones(limite, pagina) {
   try {
     return cargarPokemonesLocalStorage(limite, pagina);
   } catch (e) {
-    const pokemones = await cargarPokemonesAPI(limite, pagina);
-    guardarPokemonesLocalStorage(limite, pagina, pokemones);
-    return pokemones;
+    const listaPokemones = await cargarPokemonesAPI(limite, pagina);
+    guardarPokemonesLocalStorage(limite, pagina, listaPokemones);
+    return listaPokemones;
   }
 }
 
