@@ -1,4 +1,4 @@
-import { cambiarPokemon } from './servicios.js';
+import { cambiarPokemon } from '../Servicios/servicios.js';
 
 const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
 const $botonSiguientePagina = document.querySelector('.siguiente-pagina');
