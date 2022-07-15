@@ -1,8 +1,8 @@
 import {
   cargarPokemonesLocalStorage, guardarPokemonesLocalStorage, cargarPokemonLocalStorage,
   guardarPokemonLocalStorage,
-} from './storage.js';
-import { cargarPokemonesAPI, cargarPokemonAPI } from './api.js';
+} from '../Storage/storage.js';
+import { cargarPokemonesAPI, cargarPokemonAPI } from '../API/api.js';
 
 export async function cargarPokemon() {
   const containerPrimerPokemon = document.querySelectorAll('.lista-pokemon')[0].innerText.toLowerCase();

@@ -1,9 +1,9 @@
-import { asignarFrases } from './frases.js';
+import { asignarFrases } from '../Frases/frases.js';
 import {
   asignarDatosPokemon, crearListaPokemones,
-} from './ui.js';
-import { cargarPokemones, cargarPokemon } from './servicios.js';
-import activarPaginador from "./eventos.js"
+} from '../UI/ui.js';
+import { cargarPokemones, cargarPokemon } from '../Servicios/servicios.js';
+import activarPaginador from "../Eventos/eventos.js"
 
 export async function crearPaginaPokedex(pagina = 0, limite = 20){
   asignarFrases();

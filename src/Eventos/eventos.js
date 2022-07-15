@@ -1,8 +1,8 @@
-import { crearPaginaPokedex } from "./main.js";
+import { crearPaginaPokedex } from "../Main/main.js";
 import {
   verificarVisibilidadBotonesPaginador,
   modificarNumeroPagina,
-} from "./ui.js";
+} from "../UI/ui.js";
 
 const $botonAnteriorPagina = document.querySelector(".anterior-pagina");
 const $botonSiguientePagina = document.querySelector(".siguiente-pagina");
