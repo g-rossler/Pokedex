@@ -1,8 +1,5 @@
 import { cambiarPokemon } from '../Servicios/servicios.js';
 
-const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
-const $botonSiguientePagina = document.querySelector('.siguiente-pagina');
-const $botonUltimaPagina = document.querySelector('.ultima-pagina');
 
 class Pokemon {
   constructor(datos) {
@@ -104,6 +101,10 @@ export function crearListaPokemones(cantidadPokemones, listaPokemones) {
 }
 
 export function verificarVisibilidadBotonesPaginador(numeroPagina) {
+  const $botonAnteriorPagina = document.querySelector('.anterior-pagina');
+  const $botonSiguientePagina = document.querySelector('.siguiente-pagina');
+  const $botonUltimaPagina = document.querySelector('.ultima-pagina');
+  
   switch (numeroPagina) {
     case 1:
       $botonAnteriorPagina.className = 'btn btn-dark anterior-pagina boton-pagina oculto';
