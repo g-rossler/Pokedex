@@ -1,5 +1,6 @@
 import { cambiarPokemon } from '../Servicios/servicios.js';
-
+const pokeBolaImg = new URL ("../../Img/PokeBall.png", import.meta.url);
+const errorImg = new URL ("../../Img/Error_img.jpg", import.meta.url);
 
 class Pokemon {
   constructor(datos) {
@@ -53,7 +54,7 @@ export function asignarDatosPokemon(datosPokemon) {
   $TipoPokemon.textContent = textoTipos;
 
   if (pokemon.imagen === null) {
-    $imagenPokemon.src = 'Img/Error_img.jpg';
+    $imagenPokemon.src = errorImg;
   }
 }
 
@@ -77,7 +78,7 @@ function crearLista(cantidad) {
     $cuadroPokemon.id = `lista-pokemon-${i}`;
     const $imgPokebola = document.createElement('img');
     $imgPokebola.className = 'poke-bola-imagen';
-    $imgPokebola.src = '../Img/Poké_Ball_icon.svg.png';
+    $imgPokebola.src = pokeBolaImg;
     $imgPokebola.alt = 'poke-bola';
     $cuadroPokemon.appendChild($imgPokebola);
     const $nombrePokemon = document.createElement('span');
