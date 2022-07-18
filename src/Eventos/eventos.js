@@ -4,10 +4,6 @@ import {
   modificarNumeroPagina,
 } from "../UI/ui.js";
 
-const $botonAnteriorPagina = document.querySelector(".anterior-pagina");
-const $botonSiguientePagina = document.querySelector(".siguiente-pagina");
-const $botonUltimaPagina = document.querySelector(".ultima-pagina");
-
 function averiguarPagina() {
   const $numeroPagina = document.querySelector("#numero-pagina");
   return Number($numeroPagina.innerText);
@@ -34,6 +30,10 @@ function manejarCambioPagina(texto) {
 }
 
 export default function activarPaginador() {
+  const $botonAnteriorPagina = document.querySelector(".anterior-pagina");
+  const $botonSiguientePagina = document.querySelector(".siguiente-pagina");
+  const $botonUltimaPagina = document.querySelector(".ultima-pagina");
+  
   $botonSiguientePagina.addEventListener("click", (e) => {
     manejarCambioPagina(e.target.innerText);
   });
