@@ -1,4 +1,4 @@
-import { asignarFrases } from '../Frases/frases.js';
+import asignarFrases from '../Frases/frases.js';
 import {
   asignarDatosPokemon, crearListaPokemones,
 } from '../UI/ui.js';
