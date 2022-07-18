@@ -77,7 +77,7 @@ function crearLista(cantidad) {
     $cuadroPokemon.id = `lista-pokemon-${i}`;
     const $imgPokebola = document.createElement('img');
     $imgPokebola.className = 'poke-bola-imagen';
-    $imgPokebola.src = 'Img/Poké_Ball_icon.svg.png';
+    $imgPokebola.src = '../Img/Poké_Ball_icon.svg.png';
     $imgPokebola.alt = 'poke-bola';
     $cuadroPokemon.appendChild($imgPokebola);
     const $nombrePokemon = document.createElement('span');
