@@ -1,13 +1,11 @@
 # Pokedex
  
-Mira la enciclopedia que contiene a todos los pokemones y sus datos.
+Check the Pokédex, a place where you are going to find all the data about each Pokémon. 
 
 
 Demo: <a href="https://g-rossler.github.io/Pokedex/">Pokedex</a>
 
-### Tecnologías Usadas
-
-Las tecnologías y herramientas que utilice para este proyecto son:
+### Tools and languages used
 
 - Vanilla JavaScript
 - Bootstrap
@@ -20,17 +18,16 @@ Las tecnologías y herramientas que utilice para este proyecto son:
 
 #
 
-## Instalación
+## How to run in your PC?
 
-Este proyecto utiliza distintas dependencias que deben ser instaladas, por lo que vas a necesitar tener NPM y correr este código en la consola.
+This project use dependencies that you need to install, you also need to have NPM already install, so after you clone the project, you need to run this code in your console.
 
 ```
 npm install
 ```
 
-Esto te permitirá descargar las dependencias que se necesitan para utilizar correctamente el Pokedex.
-
-Luego, se debera ingresar en la consola:
+This will download all the necessary dependencies you need to run the Pokédex.
+After the installation is finish, you need to run this code in your console, and after that, the app will open in your default browser.
 
 ```
 http-server
@@ -40,46 +37,46 @@ http-server
 
 #
 
-## Utilización
+## How to use it?
 
 
-La Pokedex es simple de usar. Una vez que cargo completamente la página principal, el usuario podra ver a la derecha una lista con 20 pokemones por pagina y a la izquierda los datos del pokemon elegido y su imagen. 
+The Pokédex is very simple to use. Once the main page is fully load, you will see on the right side, a list with 20 Pokémon, and on the left the chosen Pokémon with his image and data.
  
-<img  src="https://raw.githubusercontent.com/g-rossler/Pokedex/gh-pages/Img/Readme/Pagina-Principal.png" align="center" alt="Pagina de inicio de la Pokedex">
-<sup>Pagina de inicio de la Pokedex</sup>
+<img  src="https://raw.githubusercontent.com/g-rossler/Pokedex/gh-pages/Img/Readme/Pagina-Principal.png" align="center" alt="Main page">
+<sup>Main page</sup>
 <br/><br/>
 
-Ademas, tambien se encuentra, abajo del titulo de la pagina, frases utilizadas en el programa.
+Also, you will find some famous lines from the show.
 
 
 
 #
 
-## Temas aprendidos
+## What I learned
 
-- Utilizacion, manejo y presentacion de informacion de una API
-- Modularizacion
-- Uso de jQuery
+- How to use an API
+- Modularization
+- Use of jQuery
 - Responsive design
 
 #
 
-## Soporte
+## Suport
 
-Si encontrás un error, me podes contactar por:
+If you find a bug, you can send me a message to:
 
 - Email: rossler.gerardo.dev@gmail.com
 - LinkedIn: https://www.linkedin.com/in/gerardo-rossler/
 
 #
 
-## Contribuciones
+## Improvements
 
-Son aceptados cambios o mejoras, para ello, abre un nuevo Inssue o enviame un mensaje a mi email.
+If you have an idea to improve or change something, you can send me a message to my email.
 
 #
 
-## Autor
+## Author
 
 Rossler Gerardo
 
