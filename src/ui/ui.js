@@ -1,6 +1,6 @@
 import { changeSelectedPokemon } from "../service/service.js";
-const pokeBolaImg = new URL("../../Img/PokeBall.png", import.meta.url);
-const errorImg = new URL("../../Img/Error_img.jpg", import.meta.url);
+const pokeBolaImg = new URL("../img/PokeBall.png", import.meta.url);
+const errorImg = new URL("../img/Error_img.jpg", import.meta.url);
 
 class Pokemon {
   constructor(data) {
