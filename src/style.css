@@ -1,271 +1,305 @@
-*{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1rem;
+* {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1rem;
 }
 
-body, html{
-    margin:0;
-    padding:0;
-    background-color: #212529;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #212529;
 }
 
-h1{
-    text-align: center;
-    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
-    color: crimson;
+h1 {
+  text-align: center;
+  text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px,
+    rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px,
+    rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px,
+    rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px,
+    rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px,
+    rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px,
+    rgb(0 0 0) 1.92034px -0.558831px 0px;
+  color: crimson;
 }
 
-h5{
-    min-width: 9rem;
+h5 {
+  min-width: 9rem;
 }
 
-header{
-    margin-top: 1rem;
+header {
+  margin-top: 1rem;
 }
 
-footer{
-    margin: 0;
+footer {
+  margin: 0;
 }
 
-#cuadro-creditos{
-    padding: 1rem 0;
-    text-align: center;
-    font-size: 1.2rem;
-    margin: 0px;
+#credits__container {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0px;
 }
 
-
-#herramientas{
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
+#pagination__container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 
-.boton-pagina{
-    padding: 0.2rem 0.5rem;
-    margin: 1rem;
-    letter-spacing: 3px;
-    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
-    color: white;
-    background-color: #212529;
-    border: 3px solid crimson;
-    font-size: 1.2rem;
+.page-button {
+  padding: 0.2rem 0.5rem;
+  margin: 1rem;
+  letter-spacing: 3px;
+  text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px,
+    rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px,
+    rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px,
+    rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px,
+    rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px,
+    rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px,
+    rgb(0 0 0) 1.92034px -0.558831px 0px;
+  color: white;
+  background-color: #212529;
+  border: 3px solid crimson;
+  font-size: 1.2rem;
 }
 
-.boton-pagina:hover{
-    color: #fff;
-    background-color: #2f3335;
-    border-color: #e92e57;
-    box-shadow: none;
+.page-button:hover {
+  color: #fff;
+  background-color: #2f3335;
+  border-color: #e92e57;
+  box-shadow: none;
 }
 
-.boton-pagina:focus{
-    color: #fff;
-    background-color: #2f3335;
-    border-color: #e92e57;
-    box-shadow: none;
+.page-button:focus {
+  color: #fff;
+  background-color: #2f3335;
+  border-color: #e92e57;
+  box-shadow: none;
 }
 
-#numero-pagina{
-    width: fit-content;
+#page-number {
+  width: fit-content;
 }
 
-.poke-bola-imagen{
-    width: 1.3rem;
-    height: 1.3rem;
-    display: block;
+.pokebola-image {
+  width: 1.3rem;
+  height: 1.3rem;
+  display: block;
 }
 
-.lista-pokemon{
-    width: 90%;
-    align-items: center;
-    display: flex;
-    border: 3px solid;
-    margin: 0.5rem 0rem;
-    padding: 0.5rem;
-    border-radius: 15px;
-    border-color: white;
+.list-pokemon {
+  width: 90%;
+  align-items: center;
+  display: flex;
+  border: 3px solid;
+  margin: 0.5rem 0rem;
+  padding: 0.5rem;
+  border-radius: 15px;
+  border-color: white;
 }
 
-
-
-.lista-pokemon:hover{
-    cursor: pointer;
-    background-color: #848386;
+.list-pokemon:hover {
+  cursor: pointer;
+  background-color: #848386;
 }
 
-.nombre-pokemon{
-    color: crimson;
-    padding-left: 0.5rem;
-    font-size: 1.5rem;
-    letter-spacing: 3.5px;
-    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
+.pokemon-name {
+  color: crimson;
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 3.5px;
+  text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px,
+    rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px,
+    rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px,
+    rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px,
+    rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px,
+    rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px,
+    rgb(0 0 0) 1.92034px -0.558831px 0px;
 }
 
-#input-buscar-pokemon{
-    width: 15vw;
-    height: 100%;
-    align-self: center;
-    padding: 0.23rem 0.05rem;
-    margin: 1rem 0.5rem;
+#input-buscar-pokemon {
+  width: 15vw;
+  height: 100%;
+  align-self: center;
+  padding: 0.23rem 0.05rem;
+  margin: 1rem 0.5rem;
 }
 
-#input-buscar-pokemon{
-    text-align: center;
+#input-buscar-pokemon {
+  text-align: center;
 }
 
-.frase{
-    text-align: center;
-    width: 90%;
-    margin: auto;
+#pokemon-quotes__container {
+  text-align: center;
+  width: 90%;
+  margin: auto;
 }
 
-#frase{
-    font-size: 1.5rem;
+#pokemon-quotes--text {
+  font-size: 1.5rem;
 }
 
-#frase-autor{
-    letter-spacing: 2px;
+#pokemon-quotes--text-author {
+  letter-spacing: 2px;
 }
 
-.cuadro{
-    padding: 2rem 1rem;
-    border: 5px solid white;
-    margin: 0.2rem;
-    background-color: #2f3335;
-    color: white;
-    border-radius: 15px;
+#page__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.lista{
-    display: grid;
+.container {
+  padding: 2rem 1rem;
+  border: 5px solid white;
+  margin: 0.2rem;
+  background-color: #2f3335;
+  color: white;
+  border-radius: 15px;
 }
 
-.lista-contenedor{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.list {
+  display: grid;
 }
 
-.seleccionado{
-    background-color: #606160;
+.list-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.cuadro-detalles{
-    text-align: center;
-    padding: 1rem 0rem;
-    font-size: 1.5rem;
-    border: 1px solid white;
-    background-color: rgba(1, 150, 120, 1);
-    font-size: 1.2rem;
+.selected-pokemon {
+  background-color: #606160;
 }
 
-#especificaciones-imagen {
-    width: 30%;
-    display: block;
-    margin: auto;
-    border: 0.5rem solid;
-    background-color: white;
-    border-color: crimson;
-    border-radius: 15px;
+.credits__container {
+  text-align: center;
+  padding: 1rem 0rem;
+  font-size: 1.5rem;
+  border: 1px solid white;
+  background-color: rgba(1, 150, 120, 1);
+  font-size: 1.2rem;
 }
 
-#especificaciones-nombre{
-    text-align: center;
-    padding: 0.5rem;
-    font-size: 2rem;
-    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
-    letter-spacing: 3px;
+#stats-image {
+  width: 30%;
+  display: block;
+  margin: auto;
+  border: 0.5rem solid;
+  background-color: white;
+  border-color: crimson;
+  border-radius: 15px;
 }
 
-.especificaciones{
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    letter-spacing: 3px;
-    text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px, rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px, rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px, rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px, rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px, rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px, rgb(0 0 0) 1.92034px -0.558831px 0px;
-    color: white;
+#stats-name {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 2rem;
+  text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px,
+    rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px,
+    rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px,
+    rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px,
+    rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px,
+    rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px,
+    rgb(0 0 0) 1.92034px -0.558831px 0px;
+  letter-spacing: 3px;
 }
 
-.especificaciones-valor{
-    display: contents;
-    font-size: 1.5rem;
+.stats {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-shadow: rgb(0 0 0) 2px 0px 0px, rgb(0 0 0) 1.75517px 0.958851px 0px,
+    rgb(0 0 0) 1.0806px 1.68294px 0px, rgb(0 0 0) 0.141474px 1.99499px 0px,
+    rgb(0 0 0) -0.832294px 1.81859px 0px, rgb(0 0 0) -1.60229px 1.19694px 0px,
+    rgb(0 0 0) -1.97998px 0.28224px 0px, rgb(0 0 0) -1.87291px -0.701566px 0px,
+    rgb(0 0 0) -1.30729px -1.5136px 0px, rgb(0 0 0) -0.421592px -1.95506px 0px,
+    rgb(0 0 0) 0.567324px -1.91785px 0px, rgb(0 0 0) 1.41734px -1.41108px 0px,
+    rgb(0 0 0) 1.92034px -0.558831px 0px;
+  color: white;
+}
+
+.stats-value {
+  display: contents;
+  font-size: 1.5rem;
 }
 
 .visible {
-    display: inline-block;
+  display: inline-block;
 }
 
-.oculto {
-    display: none;
+.hide {
+  display: none;
 }
 
-#columna-especificaciones{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+#column-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-#cuadro-creditos-texto{
-    color: white;
-    font-size: 1.5rem;
+#credits__container-text {
+  color: white;
+  font-size: 1.5rem;
 }
 
-#cuadro-creditos-link{
-    font-size: 1.5rem;
+#credits__container-link {
+  font-size: 1.5rem;
 }
 
 @media (max-width: 1200px) {
-    #numero-pagina{
-        width: 5%;
-    }
+  #page-number {
+    width: 5%;
+  }
 
-    .boton-pagina{
-        font-size: 1rem;
-    }
+  .page-button {
+    font-size: 1rem;
+  }
 
-    .cuadro{
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    #cuadro-especificaciones{
-        margin-bottom: 20px;
-    }
+  #container-stats {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 800px) {
-    #numero-pagina{
-        width: 15%;
-    }
+  #page-number {
+    width: 15%;
+  }
 
-    #columna-especificaciones{
-        grid-template-columns: 1.2fr 1fr;
-    }
+  #column-stats {
+    grid-template-columns: 1.2fr 1fr;
+  }
 
-    .especificaciones{
-        padding: 0;
-        font-size: 1rem;
-    }
+  .stats {
+    padding: 0;
+    font-size: 1rem;
+  }
 
-    .especificaciones-valor{
-        font-size: 1rem;
-    }
+  .stats-value {
+    font-size: 1rem;
+  }
 
-    .nombre-pokemon{
-        font-size: 1rem;
-    }
+  .pokemon-name {
+    font-size: 1rem;
+  }
 
-    .lista-contenedor{
-        padding: 0;
-    }
+  .list-container {
+    padding: 0;
+  }
 
-    .cuadro-especificaciones{
-        margin-bottom: 20px;
-    }
+  .container-stats {
+    margin-bottom: 20px;
+  }
 
-    #especificaciones-nombre{
-        font-size: 1.5rem;
-    }
+  #stats-name {
+    font-size: 1.5rem;
+  }
 
-    #especificaciones-imgen{
-        width: 40%;
-    }
+  #stats-imgen {
+    width: 40%;
+  }
 }
