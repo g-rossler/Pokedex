@@ -42,7 +42,7 @@ http-server
 
 The Pokédex is very simple to use. Once the main page is fully load, you will see on the right side, a list with 20 Pokémon, and on the left the chosen Pokémon with his image and data.
  
-<img  src="https://raw.githubusercontent.com/g-rossler/Pokedex/gh-pages/Img/Readme/Pagina-Principal.png" align="center" alt="Main page">
+<img  src="https://images2.imgbox.com/25/97/FuwhyHcx_o.png" align="center" alt="Main page">
 <sup>Main page</sup>
 <br/><br/>
 
